@@ -1,0 +1,46 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+
+  webserver:
+    image: apache/airflow:1.10.12
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__FERNET_KEY=xMRfyMz-q5siKbgp4C_mhA5XC_2AKSqkJxd0e22tj9k=
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./requirements.txt:/requirements.txt
+    ports:
+      - "8080:8080"
+    entrypoint: /bin/bash
+    command: -c 'pip install --user -r /requirements.txt && airflow upgradedb && airflow webserver'
+
+  scheduler:
+    image: apache/airflow:1.10.12
+    restart: always
+    depends_on:
+      - webserver
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__FERNET_KEY=xMRfyMz-q5siKbgp4C_mhA5XC_2AKSqkJxd0e22tj9k=
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./requirements.txt:/requirements.txt
+    entrypoint: /bin/bash
+    command: -c 'pip install --user -r /requirements.txt && airflow scheduler'

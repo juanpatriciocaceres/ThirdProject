@@ -1,0 +1,164 @@
+Collecting beautifulsoup4 (from -r /requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/57/f4/a69c20ee4f660081a7dedb1ac57f29be9378e04edfcb90c526b923d4bebc/beautifulsoup4-4.12.2-py3-none-any.whl (142kB)
+Requirement already satisfied: requests in /home/airflow/.local/lib/python3.6/site-packages (from -r /requirements.txt (line 2)) (2.24.0)
+Requirement already satisfied: pandas in /home/airflow/.local/lib/python3.6/site-packages (from -r /requirements.txt (line 3)) (1.1.0)
+Collecting soupsieve>1.2 (from beautifulsoup4->-r /requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/16/e3/4ad79882b92617e3a4a0df1960d6bce08edfb637737ac5c3f3ba29022e25/soupsieve-2.3.2.post1-py3-none-any.whl
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (1.25.10)
+Requirement already satisfied: idna<3,>=2.5 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (2.10)
+Requirement already satisfied: certifi>=2017.4.17 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (2020.6.20)
+Requirement already satisfied: chardet<4,>=3.0.2 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (3.0.4)
+Requirement already satisfied: pytz>=2017.2 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (2020.1)
+Requirement already satisfied: python-dateutil>=2.7.3 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (2.8.1)
+Requirement already satisfied: numpy>=1.15.4 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (1.19.1)
+Requirement already satisfied: six>=1.5 in /home/airflow/.local/lib/python3.6/site-packages (from python-dateutil>=2.7.3->pandas->-r /requirements.txt (line 3)) (1.15.0)
+Installing collected packages: soupsieve, beautifulsoup4
+Successfully installed beautifulsoup4-4.12.2 soupsieve-2.3.2.post1
+[2023-11-10 07:05:37,103] {cli_action_loggers.py:107} WARNING - Failed to log action with (psycopg2.errors.UndefinedTable) relation "log" does not exist
+LINE 1: INSERT INTO log (dttm, dag_id, task_id, event, execution_dat...
+                    ^
+
+[SQL: INSERT INTO log (dttm, dag_id, task_id, event, execution_date, owner, extra) VALUES (%(dttm)s, %(dag_id)s, %(task_id)s, %(event)s, %(execution_date)s, %(owner)s, %(extra)s) RETURNING log.id]
+[parameters: {'dttm': datetime.datetime(2023, 11, 10, 7, 5, 37, 93363, tzinfo=<Timezone [UTC]>), 'dag_id': None, 'task_id': None, 'event': 'cli_upgradedb', 'execution_date': None, 'owner': 'airflow', 'extra': '{"host_name": "059c145c44e4", "full_command": "[\'/home/airflow/.local/bin/airflow\', \'upgradedb\']"}'}]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+DB: postgresql+psycopg2://airflow:***@postgres/airflow
+[2023-11-10 07:05:37,313] {db.py:378} INFO - Creating tables
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[2023-11-10 07:05:39,525] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:05:39,526] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+Running the Gunicorn Server with:
+Workers: 4 sync
+Host: 0.0.0.0:8080
+Timeout: 120
+Logfiles: - -
+=================================================================            
+[2023-11-10 07:05:41,076] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:05:41,077] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:05:41,130] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:05:41,132] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:05:41,157] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:05:41,158] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:05:41,168] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:05:41,169] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:06:10,150] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:06:10,151] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+172.23.0.1 - - [10/Nov/2023:07:06:11 +0000] "GET /admin/ HTTP/1.1" 200 22635 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:06:11 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:06:11 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:06:11 +0000] "GET /admin/airflow/task_stats?dag_ids= HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:06:23 +0000] "GET /admin/ HTTP/1.1" 200 22635 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:06:23 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:06:23 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:06:23 +0000] "GET /admin/airflow/task_stats?dag_ids= HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+[2023-11-10 07:06:40,484] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:06:40,485] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:07:10,852] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:07:10,853] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:07:41,219] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:07:41,220] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:08:11,621] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:08:11,622] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:08:41,977] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:08:41,978] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:09:12,344] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:09:12,345] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:09:42,726] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:09:42,727] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:10:13,097] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:10:13,098] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:10:43,476] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:10:43,480] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:11:13,843] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:11:13,844] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:11:44,253] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:11:44,254] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:12:14,579] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:12:14,580] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:12:44,964] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:12:44,965] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:13:15,345] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:13:15,346] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:13:45,724] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:13:45,725] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:14:16,071] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:14:16,072] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:14:46,460] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:14:46,461] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:15:16,855] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:15:16,856] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:15:47,218] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:15:47,219] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:16:17,709] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:16:17,710] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:16:48,066] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:16:48,067] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+172.23.0.1 - - [10/Nov/2023:07:17:15 +0000] "GET /admin/ HTTP/1.1" 200 22635 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:17:15 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:17:15 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:17:15 +0000] "GET /admin/airflow/task_stats?dag_ids= HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+[2023-11-10 07:17:18,424] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:17:18,425] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:17:48,801] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:17:48,802] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:18:19,169] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:18:19,170] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:18:49,558] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:18:49,559] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:19:19,903] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:19:19,904] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:19:50,291] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:19:50,292] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+172.23.0.1 - - [10/Nov/2023:07:20:09 +0000] "GET /admin/ HTTP/1.1" 200 22635 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:20:09 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:20:09 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:20:09 +0000] "GET /admin/airflow/task_stats?dag_ids= HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+[2023-11-10 07:20:20,660] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:20:20,661] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:20:51,039] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:20:51,040] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:21:21,405] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:21:21,405] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:21:51,779] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:21:51,779] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:22:22,184] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:22:22,185] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:22:52,536] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:22:52,537] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:23:22,894] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:23:22,895] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:23:53,324] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:23:53,325] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:24:23,691] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:24:23,691] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+172.23.0.1 - - [10/Nov/2023:07:24:43 +0000] "GET /admin/ HTTP/1.1" 200 22635 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:24:43 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:24:43 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+172.23.0.1 - - [10/Nov/2023:07:24:43 +0000] "GET /admin/airflow/task_stats?dag_ids= HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+[2023-11-10 07:24:54,091] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:24:54,092] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:25:24,409] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:25:24,409] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:25:54,790] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:25:54,790] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:26:25,161] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:26:25,162] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:26:55,520] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:26:55,520] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:27:25,900] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:27:25,900] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:27:56,312] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:27:56,313] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:28:26,763] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:28:26,764] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:28:57,104] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:28:57,105] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:29:27,515] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:29:27,516] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:29:57,867] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:29:57,868] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags
+[2023-11-10 07:30:28,229] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:30:28,229] {dagbag.py:417} INFO - Filling up the DagBag from /opt/airflow/dags

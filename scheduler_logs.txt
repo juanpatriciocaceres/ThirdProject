@@ -1,0 +1,55 @@
+Collecting beautifulsoup4 (from -r /requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/57/f4/a69c20ee4f660081a7dedb1ac57f29be9378e04edfcb90c526b923d4bebc/beautifulsoup4-4.12.2-py3-none-any.whl (142kB)
+Requirement already satisfied: requests in /home/airflow/.local/lib/python3.6/site-packages (from -r /requirements.txt (line 2)) (2.24.0)
+Requirement already satisfied: pandas in /home/airflow/.local/lib/python3.6/site-packages (from -r /requirements.txt (line 3)) (1.1.0)
+Collecting soupsieve>1.2 (from beautifulsoup4->-r /requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/16/e3/4ad79882b92617e3a4a0df1960d6bce08edfb637737ac5c3f3ba29022e25/soupsieve-2.3.2.post1-py3-none-any.whl
+Requirement already satisfied: idna<3,>=2.5 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (2.10)
+Requirement already satisfied: chardet<4,>=3.0.2 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (3.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (2020.6.20)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (1.25.10)
+Requirement already satisfied: pytz>=2017.2 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (2020.1)
+Requirement already satisfied: python-dateutil>=2.7.3 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (2.8.1)
+Requirement already satisfied: numpy>=1.15.4 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (1.19.1)
+Requirement already satisfied: six>=1.5 in /home/airflow/.local/lib/python3.6/site-packages (from python-dateutil>=2.7.3->pandas->-r /requirements.txt (line 3)) (1.15.0)
+Installing collected packages: soupsieve, beautifulsoup4
+Successfully installed beautifulsoup4-4.12.2 soupsieve-2.3.2.post1
+[2023-11-10 07:05:36,950] {cli_action_loggers.py:107} WARNING - Failed to log action with (psycopg2.errors.UndefinedTable) relation "log" does not exist
+LINE 1: INSERT INTO log (dttm, dag_id, task_id, event, execution_dat...
+                    ^
+
+[SQL: INSERT INTO log (dttm, dag_id, task_id, event, execution_date, owner, extra) VALUES (%(dttm)s, %(dag_id)s, %(task_id)s, %(event)s, %(execution_date)s, %(owner)s, %(extra)s) RETURNING log.id]
+[parameters: {'dttm': datetime.datetime(2023, 11, 10, 7, 5, 36, 940525, tzinfo=<Timezone [UTC]>), 'dag_id': None, 'task_id': None, 'event': 'cli_scheduler', 'execution_date': None, 'owner': 'airflow', 'extra': '{"host_name": "3194d9f1a243", "full_command": "[\'/home/airflow/.local/bin/airflow\', \'scheduler\']"}'}]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[2023-11-10 07:05:36,953] {__init__.py:50} INFO - Using executor SequentialExecutor
+Requirement already satisfied: beautifulsoup4 in /home/airflow/.local/lib/python3.6/site-packages (from -r /requirements.txt (line 1)) (4.12.2)
+Requirement already satisfied: requests in /home/airflow/.local/lib/python3.6/site-packages (from -r /requirements.txt (line 2)) (2.24.0)
+Requirement already satisfied: pandas in /home/airflow/.local/lib/python3.6/site-packages (from -r /requirements.txt (line 3)) (1.1.0)
+Requirement already satisfied: soupsieve>1.2 in /home/airflow/.local/lib/python3.6/site-packages (from beautifulsoup4->-r /requirements.txt (line 1)) (2.3.2.post1)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (1.25.10)
+Requirement already satisfied: idna<3,>=2.5 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (2.10)
+Requirement already satisfied: certifi>=2017.4.17 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (2020.6.20)
+Requirement already satisfied: chardet<4,>=3.0.2 in /home/airflow/.local/lib/python3.6/site-packages (from requests->-r /requirements.txt (line 2)) (3.0.4)
+Requirement already satisfied: pytz>=2017.2 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (2020.1)
+Requirement already satisfied: python-dateutil>=2.7.3 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (2.8.1)
+Requirement already satisfied: numpy>=1.15.4 in /home/airflow/.local/lib/python3.6/site-packages (from pandas->-r /requirements.txt (line 3)) (1.19.1)
+Requirement already satisfied: six>=1.5 in /home/airflow/.local/lib/python3.6/site-packages (from python-dateutil>=2.7.3->pandas->-r /requirements.txt (line 3)) (1.15.0)
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[2023-11-10 07:05:41,872] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2023-11-10 07:05:41,877] {scheduler_job.py:1367} INFO - Starting the scheduler
+[2023-11-10 07:05:41,877] {scheduler_job.py:1375} INFO - Running execute loop for -1 seconds
+[2023-11-10 07:05:41,878] {scheduler_job.py:1376} INFO - Processing each file at most -1 times
+[2023-11-10 07:05:41,878] {scheduler_job.py:1379} INFO - Searching for files in /opt/airflow/dags
+[2023-11-10 07:05:41,878] {scheduler_job.py:1381} INFO - There are 0 files in /opt/airflow/dags
+[2023-11-10 07:05:41,878] {scheduler_job.py:1438} INFO - Resetting orphaned tasks for active dag runs
+[2023-11-10 07:05:41,887] {dag_processing.py:562} INFO - Launched DagFileProcessorManager with pid: 30
+[2023-11-10 07:05:41,889] {settings.py:55} INFO - Configured default timezone <Timezone [UTC]>
