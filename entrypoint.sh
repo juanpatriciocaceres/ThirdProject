@@ -6,10 +6,10 @@ airflow db init
 # Create an admin user
 airflow users create \
     --username admin \
-    --firstname JUAN_PATRICIO \
-    --lastname CACERES \
+    --firstname NOM_BRE \
+    --lastname APELLIDO \
     --role Admin \
-    --email juanpatriciocaceres@gmail.com
+    --email email@gmail.com
 
 # Start the web server, default port is 8080
 airflow webserver -p 8080 &
